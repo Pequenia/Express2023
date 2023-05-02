@@ -5,7 +5,7 @@ const config = {
     host: 'localhost',
     user: 'root',
     password: '1234',
-    database: 'api',
+    database: 'fullstack',
 };
 
 //create a MySQL pool
