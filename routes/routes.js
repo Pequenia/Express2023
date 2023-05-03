@@ -1,22 +1,24 @@
-// Cargue la conexion del grupo MySQL
-const pool = require("../data/config");
+// Load MySQL pool connection
+const pool = require('../data/config');
 
-//Ruta de la app
-const router = (app) => {
-  //Mostrar mensaje de bienvenida de root
-  app.get("/", (request, response) => {
-    response.send({
-      message: "Bienvendio a Node.js Express REST API!",
+// App routes
+const routes = (app) => {
+  // Welcome message
+  app.get('/', (req, res) => {
+    res.send({
+      message: 'Welcome to Node.js Express REST API!',
     });
   });
 
-  //Mostrar todos los usuarios
-  app.get("/users", (request, response) => {
-    pool.query("SELECT * FROM usuarios", (error, result) => {
-      if (error) throw error;
+  // Get all users
+  app.get('/users', (req, res) => {
+    // Get all users from MySQL
+    pool.query('SELECT * FROM users', (err, rows) => {
+      if (err) throw err;
 
-      response.send(result);
+      res.send(rows);
     });
   });
-}
-module.exports = router;
+};
+
+module.exports = routes;
