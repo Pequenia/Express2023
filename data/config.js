@@ -4,8 +4,8 @@ const mysql = require('mysql');
 const config = {
     host: 'localhost',
     user: 'root',
-    password: '1234',
-    database: 'fullstack',
+    password: '',
+    database: 'api',
 };
 
 //Create a MySQL pool
