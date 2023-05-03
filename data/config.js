@@ -4,11 +4,11 @@ const mysql = require('mysql');
 const config = {
     host: 'localhost',
     user: 'root',
-    password: '1234',
+    password: '',
     database: 'fullstack',
 };
 
-//create a MySQL pool
+//Create a MySQL pool
 const pool = mysql.createPool(config);
 
 //Export the pool
