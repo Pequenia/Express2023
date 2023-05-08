@@ -36,6 +36,15 @@ const router = app => {
         response.status(201).send (`User added with ID: ${result.insertID}`);
     });
   });
+  //Actualizar un usuario existente
+  app.put('/users/:id',(request, response)=>{
+    const id=request.params.id;
+
+    pool.query('UPDATE users SET ? WHERE id = ?', [request.body, id], (error,result)=>{
+        if (error) throw error;
+        response.send('User updated seccessfully.');
+    });
+  });
 
 }
 
